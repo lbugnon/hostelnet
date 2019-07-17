@@ -7,7 +7,7 @@ Para entrenar los modelos y generar predicciones, descargar el repositorio y cop
 
 ```bash
 unzip hostelnet-master.zip 
-mv train.tar.xz test.tar.xz train_labels.csv hostelnet-master/model
+mv train.tar.xz test.tar.xz train_labels.csv hostelnet-master/data
 ```
 Y construir el docker
 ```bash
