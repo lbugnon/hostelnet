@@ -19,10 +19,10 @@ COPY src/ /home/user/src/
 # ADD data/test_preliminar.tar.xz /home/user/data
 ADD data/test.tar.xz /home/user/data
 
-# Para entrenar todo y generar predicciones sobre test
+# Para entrenar todo y generar predicciones sobre test, correr el docker con:
 # "python /home/user/src/main.py" 
 
-# Para predecir en test con los modelos ya entrenados, utilizar el comando siguiente
+# Para predecir en test con los modelos ya entrenados, correr el docker con:
 # "python /home/user/src/predict.py"
 
 # ADD models.tar.xz /home/user/models/  # Descomentar esta linea si los modelos se importan desde el host
