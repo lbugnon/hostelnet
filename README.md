@@ -6,12 +6,12 @@ Este repositorio contiene el código fuente para reproducir los resultados envia
 Para entrenar los modelos y generar predicciones, descargar el repositorio y copiar los datos.
 
 ```bash
-tar -xvf hostelnet.tar.xz ./
-mv train.tar.xz test.tar.xz train_labels.csv hostelnet/model
+unzip hostelnet-master.zip 
+mv train.tar.xz test.tar.xz train_labels.csv hostelnet-master/model
 ```
 Y construir el docker
 ```bash
-cd hostelnet/
+cd hostelnet-master/
 docker build -t hostelnet .
 ```
 El docker contiene todos los paquetes necesarios de python y el CUDA dev kit, pero requiere de los drivers de Nvidia en el host. De momento la solución más simple parece ser instalar nvidia-docker2 (https://github.com/NVIDIA/nvidia-docker).  
