@@ -1,8 +1,8 @@
-### Metadata Despegar 19: HostelNet
+# Metadata Despegar 19: HostelNet
 
 Este repositorio contiene el código fuente para reproducir los resultados enviados a la competencia.
 
-# Construcción del docker
+## Construcción del docker
 Para entrenar los modelos y generar predicciones, descargar el repositorio y copiar los datos.
 
 ```bash
@@ -16,7 +16,7 @@ docker build -t hostelnet .
 ```
 El docker contiene todos los paquetes necesarios de python y el CUDA dev kit, pero requiere de los drivers de Nvidia en el host. De momento la solución más simple parece ser instalar nvidia-docker2 (https://github.com/NVIDIA/nvidia-docker).  
 
-# Entrenamiento y validación
+### Entrenamiento y validación
 
 Para entrenar el modelo final (validación y predicción en test incluido): 
 ```bash
