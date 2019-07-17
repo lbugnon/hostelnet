@@ -1,0 +1,11 @@
+nfolds=10
+device=cuda
+classes=Bar,Bathroom,Bedroom,Breakfast,City View,Dining,Hotel Front,Hotel Exterior View,Hotel Interior View,Kitchen,Living Room,Lobby,Natural View,Pool,Recreation,Sports
+net=hostelnet0
+partitions=random
+augment=1
+nsamples=13650
+partitions=.8,.1,.1
+output_dir=/home/user/results/
+data_dir=/home/user/data/
+model_dir=/home/user/results/model/
