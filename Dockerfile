@@ -25,4 +25,5 @@ ADD data/test.tar.xz /home/user/data
 # Para predecir en test con los modelos ya entrenados, utilizar el comando siguiente
 # "python /home/user/src/predict.py"
 
-# ADD models.tar.xz /home/user/models/  # Descomentar esta linea si los modelos se importan desde el host
+
+

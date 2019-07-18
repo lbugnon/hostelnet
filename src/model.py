@@ -17,7 +17,7 @@ class Model:
 
     maxepoch=100
     nbatch=8
-    W=350
+    
 
     def __init__(self,out_dir="",config=None,logger=None,fold=None,tmp_dir=""):
     
@@ -25,7 +25,7 @@ class Model:
         
         self.classes=[c for c in config["classes"].split(",")]
                 
-        self.net=net(self.W,len(self.classes)) 
+        self.net=net(len(self.classes)) 
 
         self.device=torch.device(config["device"])
         self.net=self.net.to(self.device)  

@@ -21,12 +21,14 @@ def test_predict(test_dir,model_dir,output_dir,config):
     dfres=pd.DataFrame()
     dfres["ind"]=[int(f[f.rfind("/")+1:f.rfind(".")]) for f in files]
 
+    print("Cargando datos de test...")
     test_data=ImData(files,np.zeros(len(files)),config=config)
 
     # Se cargan los modelos, se generan las predicciones y se promedian.
     allpred=torch.zeros((len(files),16))
     model=Model(output_dir,config=config)
     for m in range(10):
+        print("%d/10" %(m+1))
         model.net.load_state_dict(torch.load("%sbest_model_%d.par" %(model_dir,m)))
     
         test_loader = torch.utils.data.DataLoader(test_data, batch_size=model.nbatch)
@@ -43,3 +45,4 @@ def test_predict(test_dir,model_dir,output_dir,config):
 
 
 
+    print("listo!")
