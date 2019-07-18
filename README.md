@@ -30,5 +30,3 @@ Con los modelos ya entrenados, se puede construir el docker con otros datos y re
 ```bash
 docker run --runtime=nvidia -it -v /ABSOLUTE_PATH/results:/home/user/results/ hostelnet python3 /home/user/src/predict.py
 ```
-
-Los modelos entrenados son pesados por lo que no se adjuntan en este repositorio, por favor solicitarlos de ser necesario.
