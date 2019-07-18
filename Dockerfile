@@ -25,4 +25,4 @@ ADD data/test.tar.xz /home/user/data
 # Para predecir en test con los modelos ya entrenados, correr el docker con:
 # "python /home/user/src/predict.py"
 
-# ADD models.tar.xz /home/user/models/  # Descomentar esta linea si los modelos se importan desde el host
+# ADD model.tar.xz /home/user/model/  # Descomentar esta linea si los modelos se importan desde el host
