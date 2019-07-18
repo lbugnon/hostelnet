@@ -16,7 +16,7 @@ from imData import ImData
 def test_predict(test_dir,model_dir,output_dir,config):
 
     
-    files=["%s%d.jpg" %(test_dir,f) for f in range(20000) if os.path.isfile("%s%d.jpg" %(test_dir,f))]
+    files=["%s%d.jpg" %(test_dir,f) for f in range(10000) if os.path.isfile("%s%d.jpg" %(test_dir,f))]
 
     dfres=pd.DataFrame()
     dfres["ind"]=[int(f[f.rfind("/")+1:f.rfind(".")]) for f in files]
@@ -29,7 +29,7 @@ def test_predict(test_dir,model_dir,output_dir,config):
     model=Model(output_dir,config=config)
     for m in range(10):
         print("%d/10" %(m+1))
-        model.net.load_state_dict(torch.load("%sbest_model_%d.par" %(model_dir,m)))
+        model.net.load_state_dict(torch.load("%sbest_model_%d.par" %(model_dir,m),map_location=config["device"] ))
     
         test_loader = torch.utils.data.DataLoader(test_data, batch_size=model.nbatch)
     

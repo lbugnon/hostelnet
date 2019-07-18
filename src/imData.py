@@ -73,22 +73,25 @@ class ImData(Dataset):
     
     def load_file(self,file_name):
         """Carga de archivos con correcciones para archivos con fallas o formatos diferentes (se elimina el canal alfa)"""
-       
+        
+        #print(file_name)
         im=Image.open(file_name)
         
-        if im.mode!="RGB":
-            im=im.convert("RGB")
-            
         try:
+                
+            if im.mode!="RGB":
+                im=im.convert("RGB")
+        
             return self.baseTransform(im).to(self.device)
         except:
             
-            os.system("convert -quiet %s tmp.png" %file_name)
-            im=Image.open("tmp.png")
+            os.system("convert -quiet %s /home/user/results/tmp.jpg" %file_name)
+            im=Image.open("/home/user/results/tmp.jpg")
             
             if im.mode!="RGB":
                 im=im.convert("RGB")
-            
+
+                
             return self.baseTransform(im).to(self.device)
 
 

@@ -25,8 +25,10 @@ docker run --runtime=nvidia -it -v /ABSOLUTE_PATH/results:/home/user/results/ ho
 
 En la carpeta "./results" (del host) se guardarán los logs de entrenamiento, los modelos entrenados y la prediccion sobre los datos de test. 
 
-## Predicción
-Con los modelos ya entrenados, se puede construir el docker con otros datos de test y realizar solo la predicción con:
+## Predicción con el modelo ya entrenado
+Descargar los modelos de [este link](https://drive.google.com/drive/folders/1rXaN07tCXXEoUFkA0iGngkWQRlzgZnnP?usp=sharing) y copiarlos en la carpeta "/ABSOLUTE_PATH/results/model/" (la misma carpeta results donde aparecerá el .csv final)
+Se puede construir el docker con otros datos de test y realizar solo la predicción con:
 ```bash
 docker run --runtime=nvidia -it -v /ABSOLUTE_PATH/results:/home/user/results/ hostelnet python3 /home/user/src/predict.py
 ```
+Es importante aclarar que estas predicciones se corrieron en GPU; para correr en cpu, se puede cambiar "device=cuda" por "device=cpu" en el archivo "src/config", y correr el comando  anterior sin la opción "--runtime=nvidia". Los resultados pueden variar un poco con este cambio pero deberían ser similares, aunque demoran mucho más tiempo.

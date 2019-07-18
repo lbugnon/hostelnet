@@ -8,6 +8,6 @@ from test_predict import test_predict
 config=load_config("/home/user/src/config")
 output_dir=config["output_dir"]
 model_dir=config["model_dir"]
-test_dir=config["data_dir"]+"test/"
+test_dir=config["test_dir"]
 
 test_predict(test_dir,model_dir,output_dir,config)
